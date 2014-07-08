@@ -1,18 +1,7 @@
 <?php
 
 return array(
-
-	/*
-	|--------------------------------------------------------------------------
-	| Application Debug Mode
-	|--------------------------------------------------------------------------
-	|
-	| When your application is in debug mode, detailed error messages with
-	| stack traces will be shown on every error that occurs within your
-	| application. If disabled, a simple generic error page is shown.
-	|
-	*/
-
 	'debug' => true,
-
+        'soundcloudapikey' => '42d31472a33e18b7de5aedcc09430b41',
+        'soundcloudsecret' => 'fa6623dbe501b210654e0c492b71ddba'
 );

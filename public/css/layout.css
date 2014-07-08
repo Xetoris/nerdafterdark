@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 21, 2014, 9:42:46 PM
+    Author     : Chris Mccord
+*/
+
+body{
+    height:100%;
+    width:100%;
+}
+
+.post-summary {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: #E7E7E7 solid 3px;
+    background-color: #285e8e;
+}
+
+#logo{
+    min-height:102px;
+    background-image: url('../resources/Nerd After Dark.png');
+    background-size: 100% 100%;
+}
+
+#background{
+    background-color:#E7E7EF;
+    height:100%;
+}
+
+#foreground{
+    background-color:white;
+    height:100%;
+}
+
+#header{
+    background-color:black;
+}
+
+#social_links{
+    color: white;
+}
