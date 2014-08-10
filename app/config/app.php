@@ -178,5 +178,14 @@ return array(
       |
      */
     'soundcloudapikey' => '',
-    'soundcloudsecret' => ''
+    'soundcloudsecret' => '',
+     /*
+      |--------------------------------------------------------------------------
+      | Default Content Count
+      |--------------------------------------------------------------------------
+      |
+      | The number of content items to display by default.
+      |
+     */
+    'defaultcontentcount' => '5'
 );

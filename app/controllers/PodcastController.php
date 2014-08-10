@@ -6,6 +6,13 @@
  * and open the template in the editor.
  */
 
-class PodcastController extends BaseController {
+class PodcastController extends BaseContentController {
 
+    public function Latest() {       
+        return View::make('podcasts/podcasts', array('content_feed' => $this->source->GetLatestContentFromFeed(array(PodcastModel::TYPE_NAME))));
+    }
+
+    public function Archived() {
+        return View::make('podcasts/podcasts', array('content_feed' => $this->source->GetAllContentFromFeed(array(PodcastModel::TYPE_NAME))));
+    }
 }
