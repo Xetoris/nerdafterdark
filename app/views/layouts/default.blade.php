@@ -23,12 +23,12 @@
                     <div class="col-sm-8" id="logo"> </div>
                     <div class="col-sm-2" id="social_links">
                         <ul class="list-inline">
-                            <li>@include('content\social\twitter')</li>
+                            <li>@include('content/social/twitter')</li>
                         </ul>
                     </div>
                 </div>
                 <div class="row" id="navigation-container">
-                    @include('content\navigation\navigation')
+                    @include('content/navigation/navigation')
                 </div>
             </header>
             <div class="container" id="foreground">
