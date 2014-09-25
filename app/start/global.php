@@ -21,6 +21,7 @@ ClassLoader::addDirectories(array(
         app_path().'/helpers/content-publishers/publishers',
         app_path().'/helpers/content-publishers/subscribers',
         app_path().'/helpers/content-publishers/utilities',
+        app_path().'/helpers/utility'
 ));
 
 /*

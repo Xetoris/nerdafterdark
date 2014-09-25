@@ -7,6 +7,12 @@ and open the template in the editor.
     Created on : Jun 21, 2014, 9:42:46 PM
     Author     : Chris Mccord
 */
+html, body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color:#E7E7EF;
+}
 
 .post-summary {
     padding-top: 10px;
@@ -21,11 +27,6 @@ and open the template in the editor.
     min-height:102px;
     background-image: url('../resources/Nerd After Dark.png');
     background-size: 100% 100%;
-}
-
-#background{
-    background-color:#E7E7EF;
-    height:100%;
 }
 
 #header{
@@ -82,7 +83,8 @@ and open the template in the editor.
 #foreground{
     background-color: #000;
     color: whitesmoke;
-    height: 100%;
+    min-height: 100%;
+    padding-top: 155px;
 }
 
 .navbar{
@@ -90,4 +92,11 @@ and open the template in the editor.
 }
 
 #side-bar{
+}
+
+.fixed-top{
+    position:fixed;
+    right: 0;
+    left: 0;
+    top: 0;
 }

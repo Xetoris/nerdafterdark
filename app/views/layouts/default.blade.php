@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <meta name="viewport" content="width=device-width, initial-scale=1">   
 
         <title>Nerd After Dark</title>
 
@@ -18,8 +18,7 @@
         <![endif]-->
     </head>
     <body>       
-        <div id="background">
-            <div class="container" id="foreground">
+            <header class="container navbar-fixed-top" id="site-header">
                 <div class="row" id="header">
                     <div class="col-sm-8" id="logo"> </div>
                     <div class="col-sm-2" id="social_links">
@@ -31,21 +30,19 @@
                 <div class="row" id="navigation-container">
                     @include('content\navigation\navigation')
                 </div>
+            </header>
+            <div class="container" id="foreground">
                 <div class="row" id="content-container">
                     <div class="col-sm-8" id="content">
                         @yield('content')
                     </div>
                     <div class="col-sm-4 hidden-xs" id="side-bar">
                         <div class="row" id="ads">
-                            Buy stuff now!!
-                        </div>
-                        <div class="row" id="links">
-                            <a href="http://www.google.com">The power of Google!</a>
+                            Podcasts released every week and more content coming!
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

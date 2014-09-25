@@ -15,30 +15,22 @@
                         <li><a href="{{URL::to('/podcasts/archived')}}">Archive</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Live Action</a>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Live Action</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#Sign-up">Your Page</a></li>
-                        <li><a href="#Support">Posts</a></li>
-                        <li><a href="#SomethingCool">Friends</a></li>
-                    </ul>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Members <span class="caret"></span></a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Discussion <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#ReportIssue">Forum</a></li>
-                    </ul>
+                <li class="dropdown disabled">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Discussion <span class="caret"></span></a>
                 </li>
             </ul> 
 
-            <form class="navbar-form navbar-right" role="search">
+            <form class="navbar-form navbar-right" role="search" hidden="true">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">                
+                    <input type="text" class="form-control disabled" placeholder="Search" disabled="true">                
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default disabled">Submit</button>
             </form>
         </div>
     </div>
