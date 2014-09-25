@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 21, 2014, 9:42:46 PM
+    Author     : Chris Mccord
+*/
+html, body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color:#E7E7EF;
+}
+
+.post-summary {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: #E7E7E7 solid 3px;
+    background-color: #285e8e;
+}
+
+#logo{
+    min-height:102px;
+    background-image: url('../resources/Nerd After Dark.png');
+    background-size: 100% 100%;
+}
+
+#header{
+    background-color:black;
+}
+
+#social_links{
+    color: white;
+}
+
+.podcast-image-tag{
+    min-height:60px;
+    background-image: url('../resources/PodcastLabel-Clear-White.png');
+    background-size: 100% 100%;
+}
+
+.content-block{
+    width: 100%;
+    border-bottom: 1px #E7E7EF solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #2aabd2
+}
+
+.rotated-ninty{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotated-twohundredseventy{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.rotated-onehundredeighty{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.podcast-duration{
+    font-size: x-small;
+    color: lightsalmon;
+}
+
+#foreground{
+    background-color: #000;
+    color: whitesmoke;
+    min-height: 100%;
+    padding-top: 155px;
+}
+
+.navbar{
+    margin-bottom:1px;
+}
+
+#side-bar{
+}
+
+.fixed-top{
+    position:fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}

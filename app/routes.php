@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'IndexController@Index');
+Route::get('/podcasts', 'PodcastController@Latest');
+Route::get('/podcasts/archived', 'PodcastController@Archived');
+//Route::get('/fancy', 'IndexController@FancyIndex');
+//Route::get('/testbinding', 'HomeController@showWelcome');

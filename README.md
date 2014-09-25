@@ -7,3 +7,4 @@ Utilizes:
 PHP
 Laravel
 Bootstrap
+cURL

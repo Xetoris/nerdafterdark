@@ -4,7 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"ise/php-soundcloud": "3.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -31,6 +32,6 @@
 	},
 	"config": {
 		"preferred-install": "dist"
-	},
+        },
 	"minimum-stability": "stable"
 }

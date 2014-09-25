@@ -17,7 +17,15 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+            $tbo = new TestBindingObject;
+            return ModelBinder::BindObjectFromCollection($tbo, Input::all());
 	}
-
 }
+
+        class TestBindingObject{
+            var $Test = 'eNGwiSH';
+            var $test2 = 'spanish';
+            var $tOoTleS = 'BLARG';
+        }
+
+
