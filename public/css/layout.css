@@ -100,3 +100,7 @@ html, body{
     left: 0;
     top: 0;
 }
+
+#captchawrapper > img{
+    padding-bottom: 2px;
+}
