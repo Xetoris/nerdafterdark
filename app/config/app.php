@@ -170,7 +170,7 @@ return array(
         'View' => 'Illuminate\Support\Facades\View',
         'Captcha' => 'Mews\Captcha\Facades\Captcha',
     ),
-    
+
      /*
       |--------------------------------------------------------------------------
       | Sound Cloud API Keys
@@ -181,6 +181,7 @@ return array(
      */
     'soundcloudapikey' => '',
     'soundcloudsecret' => '',
+
      /*
       |--------------------------------------------------------------------------
       | Default Content Count
@@ -189,5 +190,25 @@ return array(
       | The number of content items to display by default.
       |
      */
-    'defaultcontentcount' => '5'
+    'defaultcontentcount' => '5',
+
+    /*
+      |--------------------------------------------------------------------------
+      | Google ApiKey
+      |--------------------------------------------------------------------------
+      |
+      | The API key for accessing the google API's.
+      |
+    */
+    'googleapikey' => '',
+    /*
+      |--------------------------------------------------------------------------
+      | YouTube channel id
+      |--------------------------------------------------------------------------
+      |
+      | The Id of the YouTube channel
+      |
+    */
+
+    'youtubechannelid' => ''
 );

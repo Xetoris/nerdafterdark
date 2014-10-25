@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">   
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Nerd After Dark</title>
 
@@ -17,7 +17,7 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>       
+    <body>
             <header class="container navbar-fixed-top" id="site-header">
                 <div class="row" id="header">
                     <div class="col-sm-8" id="logo"> </div>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-sm-4 hidden-xs" id="side-bar">
                         <div class="row" id="ads">
-                            Podcasts released every week and more content coming!
+                            Now with live action content!
                         </div>
                     </div>
                 </div>
@@ -50,5 +50,3 @@
         {{HTML::script('/js/bootstrap_311/bootstrap.min.js')}}
     </body>
 </html>
-
-

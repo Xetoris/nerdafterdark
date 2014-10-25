@@ -8,7 +8,7 @@
 
 class IndexController extends BaseContentController {
 
-    public function Index() {       
+    public function Index() {
         return View::make('home/index', array('content_feed' => $this->source->GetLatestContentFromFeed()));
     }
 

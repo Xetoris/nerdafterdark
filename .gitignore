@@ -8,4 +8,4 @@ composer.lock
 Thumbs.db
 /nbproject
 /app/config/cmccord
-
+/public/resources

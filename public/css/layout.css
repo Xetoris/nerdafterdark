@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jun 21, 2014, 9:42:46 PM
     Author     : Chris Mccord
 */
@@ -41,6 +41,22 @@ html, body{
     min-height:60px;
     background-image: url('../resources/PodcastLabel-Clear-White.png');
     background-size: 100% 100%;
+}
+
+.youtube-icon-wrapper{
+  padding-top:20px;
+  min-width: 34px;
+}
+
+.youtube-thumbnail-link
+{
+  width: 0px;
+}
+
+.youtube-icon{
+  max-height: 100%;
+  max-width: 100%;
+  min-width: 34px;
 }
 
 .content-block{
@@ -103,4 +119,8 @@ html, body{
 
 #captchawrapper > img{
     padding-bottom: 2px;
+}
+
+#registration-errors{
+  color:black;
 }

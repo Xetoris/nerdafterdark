@@ -15,8 +15,12 @@
                         <li><a href="{{URL::to('/podcasts/archived')}}">Archive</a></li>
                     </ul>
                 </li>
-                <li class="dropdown disabled">
-                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Live Action</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Live Action <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="{{URL::to('/liveaction')}}">New</a></li>
+                      <li><a href="{{URL::to('/liveaction/archived')}}">Arcive</a></li>
+                    </ul>
                 </li>
                 <li class="dropdown disabled">
                     <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Members <span class="caret"></span></a>
@@ -24,15 +28,14 @@
                 <li class="dropdown disabled">
                     <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Discussion <span class="caret"></span></a>
                 </li>
-            </ul> 
+            </ul>
 
             <form class="navbar-form navbar-right" role="search" hidden="true">
                 <div class="form-group">
-                    <input type="text" class="form-control disabled" placeholder="Search" disabled="true">                
+                    <input type="text" class="form-control disabled" placeholder="Search" disabled="true">
                 </div>
                 <button type="submit" class="btn btn-default disabled">Submit</button>
             </form>
         </div>
     </div>
 </nav>
-

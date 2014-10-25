@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"ise/php-soundcloud": "3.*",
-                "mews/captcha" : "dev-master"
+    "mews/captcha" : "dev-master",
+		"google/apiclient":"1.0.*@beta"
 	},
 	"autoload": {
 		"classmap": [

@@ -14,7 +14,7 @@
 class LibsynPublisher extends BaseContentPublisher {
     protected $client = null;
     private $publisherkey = "libsyn";
-    
+
     function __construct($endpoint)
     {
         $this->client = new XmlCurlUtility($endpoint);
@@ -23,18 +23,18 @@ class LibsynPublisher extends BaseContentPublisher {
     public function GetPublishedContent($count)
     {
         $feed = $this->client->GetToResource("rss");
-        
+
         $trackList = array();
-        
+
         foreach($feed->channel->item as $value)
         {
             if(!is_null($count) && count($trackList) >= $count)
             {
                 break;
             }
-                        
+
             $itunes_specific_nodes = $value->children("itunes", true);
-                       
+
             $podcast = new PodcastModel($this->publisherkey);
             $podcast->id = (string)$value->guid;
             $podcast->date_created = new DateTime((string)$value->pubDate);
@@ -43,10 +43,10 @@ class LibsynPublisher extends BaseContentPublisher {
             $podcast->title = (string) $value->title;
             $podcast->url = (string)$value->enclosure["url"];
             $podcast->tags = explode(",", (string)$itunes_specific_nodes->keywords);
- 
+
             array_push($trackList, $podcast);
         }
-        
+
         return $trackList;
     }
 

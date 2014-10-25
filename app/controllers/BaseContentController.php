@@ -13,8 +13,8 @@
  */
 class BaseContentController extends BaseController {
     protected $source = null;
-    
+
     function __construct() {
-        $this->source = new ContentSubscriber(); 
+        $this->source = new ContentSubscriber();
     }
 }
