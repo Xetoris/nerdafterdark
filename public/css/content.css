@@ -1,0 +1,154 @@
+/*
+ * General
+ */
+.content-panel{
+  width: 35%;
+  min-width: 400px;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  height: 350px;
+}
+
+.content-block{
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * Youtube Content
+ */
+ .youtube-body{
+   height: 35%;
+   color: white;
+   background-color: #9E9E9E;
+   border-top-color: #000000;
+   border-top-width: 1px;
+   border-bottom-color: #000000;
+   border-bottom-width: 1px;
+ }
+
+ .youtube-title {
+   font-size: 20px;
+   padding-left: 10px;
+   font-style: italic;
+   font-weight: bold;
+ }
+
+ .youtube-description {
+   padding-left: 10px;
+ }
+
+ .youtube-stats {
+   height: 10%;
+ }
+
+ .youtube-stats-content {
+   margin-left: 30px;
+ }
+
+ .youtube-thumbnail-frame {
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .youtube-thumbnail{
+   position: relative;
+   background-color: #000000;
+ }
+
+ .youtube-thumbnail-link {
+   position: absolute;
+   right: 20px;
+   top: 46%;
+   height: 60px;
+   width: 60px;
+ }
+
+ .youtube-thumbnail-link:link{
+   text-decoration: none;
+ }
+
+
+/*
+ * Podcast Content
+*/
+.podcast-body{
+  height: 35%;
+  color: white;
+  background-color: #9E9E9E;
+  border-top-color: #000000;
+  border-top-width: 1px;
+  border-bottom-color: #000000;
+  border-bottom-width: 1px;
+}
+
+.podcast-clip{
+  position: relative;
+  background-color: #000000;
+  color: white;
+  text-align:center;
+}
+
+.podcast-description{
+  padding-left: 10px;
+}
+
+.podcast-stats {
+  height: 10%;
+}
+
+.podcast-duration {
+  margin-left: 30px;
+}
+
+.podcast-link {
+  position: absolute;
+  right: 20px;
+  top: 46%;
+  height: 60px;
+  width: 60px;
+}
+
+.podcast-link:link{
+  text-decoration: none;
+}
+
+.podcast-show-title
+{
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.podcast-show-number
+{
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+
+/*
+ * Spinning Button
+ */
+
+ /**/
+
+ .rotating-button {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 150px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    font-weight: bolder;
+    font-size: 40px;
+    transition: all .5s ease-in-out;
+ }
+
+ .rotating-button:hover {
+   transform: rotate(360deg);
+ }

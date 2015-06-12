@@ -1,0 +1,31 @@
+<link rel="import" href="../../bower/polymer/polymer.html" />
+<link rel="import" href="../../bower/core-media-query/core-media-query.html" />
+<link rel="import" href="../../bower/core-menu-button/core-menu-button.html" />
+
+<polymer-element name="collapsing-navbar" attributes="query displayname">
+  <template>
+    <style>
+    </style>
+    <div id="collapsing-navbar-title">{{displayname}}</div>
+    <div id="collapsing-navbar-spacer" flex></div>
+    <template if="{{querymatched}}">
+      <core-menu-button id="small-screen-navigation-container">
+        <core-icon-button icon="menu"></core-icon-button>
+        <core-dropdown>
+          <content></content>
+        </core-dropdown>
+      </core-menu-button>
+    </template>
+    <template if="{{!querymatched}}">
+      <div id="large-screen-navigation-container">
+        <content></content>
+      </div>
+    </template>
+    <core-media-query query="{{query}}" querymatches="{{querymatched}}"></core-media-query>
+  </template>
+  <script>
+  Polymer({
+    query: 'max-width: 640px'
+  })
+  </script>
+</polymer-element>

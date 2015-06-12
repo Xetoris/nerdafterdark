@@ -1,11 +1,4 @@
-/bootstrap/compiled.php
 /vendor
-composer.phar
-composer.lock
-.env.*.php
-.env.php
-.DS_Store
-Thumbs.db
-/nbproject
-/app/config/cmccord
-/public/resources
+/node_modules
+/public/bower
+.env

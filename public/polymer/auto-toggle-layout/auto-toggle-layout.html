@@ -1,0 +1,14 @@
+<link rel="import" href="../../bower/polymer/polymer.html" />
+<link rel="import" href="../../bower/core-media-query/core-media-query.html" />
+
+<polymer-element name="auto-toggle-layout" attributes="webLayoutClass mobileLayoutClass">
+  <template>
+    <core-media-query query="max-width: 640px" querymatches="{{mobileFrameEnabled}}"></core-media-query>
+  </template>
+  <script>
+  Polymer({
+    webLayoutClass: 'web-layout',
+    mobileLayoutClass: 'mobile-layout'
+  })
+  </script>
+</polymer-element>
