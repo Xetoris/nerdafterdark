@@ -1,4 +1,5 @@
 require_relative '../spec_helper'
+require_relative '../../lib/media/providers/libsyn_provider'
 
 describe 'lybsin_provider' do
   let(:full_xml){ '<?xml version="1.0" encoding="UTF-8"?>
@@ -579,7 +580,7 @@ Twitter: @nadsnation]]></itunes:subtitle>
        </rss>' }
 
   it 'can parse sample feed' do
-    libsyn = Nads::Media::LibsynProvider.new do
+    libsyn = Nads::Media::Providers::LibsynProvider.new do
       #RestClient.get('http://nerdafterdark.libsyn.com/rss')
       short_xml
     end
@@ -595,8 +596,8 @@ Twitter: @nadsnation]]></itunes:subtitle>
     feed.each do |podcast|
       # The Object
       podcast.wont_be_nil
-      podcast.must_be_kind_of Nads::Media::Media
-      podcast.must_be_instance_of Nads::Media::Podcast
+      podcast.must_be_kind_of Nads::Media::Entities::Media
+      podcast.must_be_instance_of Nads::Media::Entities::Podcast
 
       # The Id
       podcast.id.wont_be_nil

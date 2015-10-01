@@ -1,4 +1,5 @@
 require 'Nokogiri'
+require_relative '../entities/podcast'
 
 module Nads
   module Media
@@ -68,7 +69,7 @@ module Nads
             title_missing = false
           end
 
-          media = Podcast.new
+          media = Nads::Media::Entities::Podcast.new
 
           media.id = id_node.children.first.content
           media.title = title

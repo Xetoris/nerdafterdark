@@ -15,13 +15,13 @@ Lotus::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/nerdafterdark_development'
   #    adapter type: :sql, uri: 'mysql://localhost/nerdafterdark_development'
   #
-  #adapter type: :sql, uri: ENV['NERDAFTERDARK_DATABASE_URL']
+  adapter type: :sql, uri: ENV['NERDAFTERDARK_DATABASE_URL']
 
   ##
   # Migrations
   #
-  #migrations 'db/migrations'
-  #schema     'db/schema.sql'
+  migrations 'db/migrations'
+  schema     'db/schema.sql'
 
   ##
   # Database mapping
