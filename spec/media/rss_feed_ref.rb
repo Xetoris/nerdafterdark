@@ -1,8 +1,57 @@
-require_relative '../spec_helper'
-require_relative '../../lib/media/providers/libsyn_provider'
-
-describe 'lybsin_provider' do
-  let(:full_xml){ '<?xml version="1.0" encoding="UTF-8"?>
+class RSSFeedRef
+  def self.simple_xml
+    '<?xml version="1.0" encoding="UTF-8"?>
+       <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	     <channel>
+		   <atom:link href="http://nerdafterdark.libsyn.com/rss" rel="self" type="application/rss+xml"/>
+		   <title>Nerd After Dark Podcast</title>
+		   <pubDate>Mon, 14 Sep 2015 14:56:43 +0000</pubDate>
+		   <lastBuildDate>Wed, 16 Sep 2015 02:54:24 +0000</lastBuildDate>
+		   <generator>Libsyn WebEngine 2.0</generator>
+		   <link>http://nerdafterdark.libsyn.com/webpage</link>
+		   <language>en</language>
+		   <copyright><![CDATA[]]></copyright>
+		   <docs>http://nerdafterdark.libsyn.com/webpage</docs>
+		   <description><![CDATA[A weekly podcast where we discuss all things nerdy.]]></description>
+		   <image>
+			 <url>http://static.libsyn.com/p/assets/4/d/f/4/4df47bfbb108b3ba/Nerd_After_Dark_on_black.png</url>
+			 <title>Nerd After Dark Podcast</title>
+			 <link><![CDATA[http://nerdafterdark.libsyn.com/webpage]]></link>
+		   </image>
+		   <itunes:author>Nerd After Dark</itunes:author>
+	     <itunes:category text="Comedy"/>
+	     <itunes:category text="Games &amp; Hobbies"/>
+	     <itunes:category text="Technology"/>
+		   <itunes:image href="http://static.libsyn.com/p/assets/4/d/f/4/4df47bfbb108b3ba/Nerd_After_Dark_on_black.png" />
+		   <itunes:explicit>yes</itunes:explicit>
+		   <itunes:owner>
+			 <itunes:name><![CDATA[Nerd After Dark]]></itunes:name>
+			 <itunes:email>nadsnation@gmail.com</itunes:email>
+		   </itunes:owner>
+		   <itunes:summary><![CDATA[A weekly podcast where we try to discuss everything nerdy in about half an hour.]]></itunes:summary>
+		   <itunes:subtitle><![CDATA[]]></itunes:subtitle>
+			 <item>
+			 <title>Happy Half Hour 38</title>
+			 <pubDate>Mon, 14 Sep 2015 14:56:43 +0000</pubDate>
+			 <guid isPermaLink="false"><![CDATA[accbdc3dd1f33a740d962b1735357c20]]></guid>
+			 <link><![CDATA[http://nerdafterdark.libsyn.com/happy-half-hour-38]]></link>
+			 <itunes:image href="http://static.libsyn.com/p/assets/d/2/5/5/d2554bfa6a93862f/Nerd_After_Dark_on_black_480.png" />
+			 <description><![CDATA[<p>Join us this week, as we start the podcast arguing the merits of relativity of moving in a direction, and the conversation just spirals out of control from there.</p>
+       <p>Website: nerdafterdark.com</p>
+       <p>Twitter: @nadsnation</p>]]></description>
+			 <enclosure length="34257555" type="audio/mpeg" url="http://traffic.libsyn.com/nerdafterdark/Happy_Half_Hour_38.mp3" />
+			 <itunes:duration>35:41</itunes:duration>
+			 <itunes:explicit>yes</itunes:explicit>
+			 <itunes:keywords>podcast,funny,facebook,comedy,stories,philosophy,nostalgia,talk,ed,past,random,walk,crab,nerd,direction,edd,eddy</itunes:keywords>
+			 <itunes:subtitle><![CDATA[Join us this week, as we start the podcast arguing the merits of relativity of moving in a direction, and the conversation just spirals out of control from there.
+       Website: nerdafterdark.com
+       Twitter: @nadsnation]]></itunes:subtitle>
+			 </item>
+       </channel>
+       </rss>'
+  end
+  def self.full_xml
+    '<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<channel>
 		<atom:link href="http://nerdafterdark.libsyn.com/rss" rel="self" type="application/rss+xml"/>
@@ -486,57 +535,10 @@ Website: nerdafterdark.com
 Twitter: @nadsnation]]></itunes:subtitle>
 					</item>
 	</channel>
-</rss>' }
-  let(:short_xml) {  '<?xml version="1.0" encoding="UTF-8"?>
-       <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-	     <channel>
-		   <atom:link href="http://nerdafterdark.libsyn.com/rss" rel="self" type="application/rss+xml"/>
-		   <title>Nerd After Dark Podcast</title>
-		   <pubDate>Mon, 14 Sep 2015 14:56:43 +0000</pubDate>
-		   <lastBuildDate>Wed, 16 Sep 2015 02:54:24 +0000</lastBuildDate>
-		   <generator>Libsyn WebEngine 2.0</generator>
-		   <link>http://nerdafterdark.libsyn.com/webpage</link>
-		   <language>en</language>
-		   <copyright><![CDATA[]]></copyright>
-		   <docs>http://nerdafterdark.libsyn.com/webpage</docs>
-		   <description><![CDATA[A weekly podcast where we discuss all things nerdy.]]></description>
-		   <image>
-			 <url>http://static.libsyn.com/p/assets/4/d/f/4/4df47bfbb108b3ba/Nerd_After_Dark_on_black.png</url>
-			 <title>Nerd After Dark Podcast</title>
-			 <link><![CDATA[http://nerdafterdark.libsyn.com/webpage]]></link>
-		   </image>
-		   <itunes:author>Nerd After Dark</itunes:author>
-	     <itunes:category text="Comedy"/>
-	     <itunes:category text="Games &amp; Hobbies"/>
-	     <itunes:category text="Technology"/>
-		   <itunes:image href="http://static.libsyn.com/p/assets/4/d/f/4/4df47bfbb108b3ba/Nerd_After_Dark_on_black.png" />
-		   <itunes:explicit>yes</itunes:explicit>
-		   <itunes:owner>
-			 <itunes:name><![CDATA[Nerd After Dark]]></itunes:name>
-			 <itunes:email>nadsnation@gmail.com</itunes:email>
-		   </itunes:owner>
-		   <itunes:summary><![CDATA[A weekly podcast where we try to discuss everything nerdy in about half an hour.]]></itunes:summary>
-		   <itunes:subtitle><![CDATA[]]></itunes:subtitle>
-			 <item>
-			 <title>Happy Half Hour 38</title>
-			 <pubDate>Mon, 14 Sep 2015 14:56:43 +0000</pubDate>
-			 <guid isPermaLink="false"><![CDATA[accbdc3dd1f33a740d962b1735357c20]]></guid>
-			 <link><![CDATA[http://nerdafterdark.libsyn.com/happy-half-hour-38]]></link>
-			 <itunes:image href="http://static.libsyn.com/p/assets/d/2/5/5/d2554bfa6a93862f/Nerd_After_Dark_on_black_480.png" />
-			 <description><![CDATA[<p>Join us this week, as we start the podcast arguing the merits of relativity of moving in a direction, and the conversation just spirals out of control from there.</p>
-       <p>Website: nerdafterdark.com</p>
-       <p>Twitter: @nadsnation</p>]]></description>
-			 <enclosure length="34257555" type="audio/mpeg" url="http://traffic.libsyn.com/nerdafterdark/Happy_Half_Hour_38.mp3" />
-			 <itunes:duration>35:41</itunes:duration>
-			 <itunes:explicit>yes</itunes:explicit>
-			 <itunes:keywords>podcast,funny,facebook,comedy,stories,philosophy,nostalgia,talk,ed,past,random,walk,crab,nerd,direction,edd,eddy</itunes:keywords>
-			 <itunes:subtitle><![CDATA[Join us this week, as we start the podcast arguing the merits of relativity of moving in a direction, and the conversation just spirals out of control from there.
-       Website: nerdafterdark.com
-       Twitter: @nadsnation]]></itunes:subtitle>
-			 </item>
-       </channel>
-       </rss>' }
-  let(:missing_guid) {        '<?xml version="1.0" encoding="UTF-8"?>
+</rss>'
+  end
+  def self.missing_guid_xml
+    '<?xml version="1.0" encoding="UTF-8"?>
        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	     <channel>
 			 <item>
@@ -556,8 +558,10 @@ Twitter: @nadsnation]]></itunes:subtitle>
        Twitter: @nadsnation]]></itunes:subtitle>
 			 </item>
        </channel>
-       </rss>' }
-  let(:missing_url) {        '<?xml version="1.0" encoding="UTF-8"?>
+       </rss>'
+  end
+  def self.missing_url_xml
+    '<?xml version="1.0" encoding="UTF-8"?>
        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	     <channel>
 			 <item>
@@ -577,110 +581,6 @@ Twitter: @nadsnation]]></itunes:subtitle>
        Twitter: @nadsnation]]></itunes:subtitle>
 			 </item>
        </channel>
-       </rss>' }
-
-  it 'can parse sample feed' do
-    libsyn = Nads::Media::Providers::LibsynProvider.new do
-      #RestClient.get('http://nerdafterdark.libsyn.com/rss')
-      short_xml
-    end
-
-    # Get Feed
-    feed = libsyn.get_latest
-
-    # The Collection
-    feed.wont_be_empty
-    feed.wont_be_nil
-    feed.count.must_equal 1
-
-    feed.each do |podcast|
-      # The Object
-      podcast.wont_be_nil
-      podcast.must_be_kind_of Nads::Media::Entities::Media
-      podcast.must_be_instance_of Nads::Media::Entities::Podcast
-
-      # The Id
-      podcast.id.wont_be_nil
-      podcast.id.wont_be_empty
-      podcast.id.is_a?(String)
-      assert(/^[a-zA-Z0-9]*$/.match(podcast.id))
-
-      # The title
-      podcast.title.wont_be_nil
-      podcast.title.wont_be_empty
-      podcast.title.is_a?(String)
-
-      # Date Created
-      podcast.date_created.wont_be_nil
-      podcast.date_created.is_a?(String)
-
-      # Description
-      podcast.description.wont_be_nil
-      podcast.description.wont_be_empty
-      podcast.description.is_a?(String)
-
-      # Url
-      podcast.url.wont_be_nil
-      podcast.url.wont_be_empty
-      podcast.url.is_a?(String)
-
-      # Tags
-      podcast.tags.wont_be_nil
-      podcast.tags.wont_be_empty
-      podcast.tags.is_a?(Array)
-      podcast.tags.all? { |tag| tag.is_a?(String) }
-
-      # Duration
-      podcast.duration.wont_be_nil
-      podcast.duration.wont_be_empty
-      podcast.duration.is_a?(String)
-
-      # Number
-      podcast.number.wont_be_nil
-      podcast.number.wont_be_empty
-      podcast.number.is_a?(String)
-    end
-  end
-
-  it 'raises when no guid node is present' do
-    assert_raises(Exception) do
-      libsyn = Nads::Media::Providers::LibsynProvider.new do
-        missing_guid
-      end
-
-      libsyn.get_latest
-    end
-  end
-
-  it 'raises when no link node is present' do
-    assert_raises(Exception) do
-      libsyn = Nads::Media::Providers::LibsynProvider.new do
-        missing_url
-      end
-
-      libsyn.get_latest
-    end
-  end
-
-  it 'returns requested amount' do
-    libsyn = Nads::Media::Providers::LibsynProvider.new do
-      full_xml
-    end
-
-    feed = libsyn.get_latest
-
-    feed.count.must_equal(10)
-
-    feed = libsyn.get_latest(10)
-
-    feed.count.must_equal(10)
-
-    feed = libsyn.get_latest(2)
-
-    feed.count.must_equal(2)
-
-    feed = libsyn.get_latest(23)
-
-    feed.count.must_equal(23)
+       </rss>'
   end
 end
